@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./watcher.js"></script>
+    <script src="./dep.js"></script>
+    <script src="./observe.js"></script>
+    <script src="./compiler.js"></script>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>{{msg}}</div>
+        <input v-model="count">
+        <div v-text="msg"></div>
+        <div v-html="html"></div>
+        <div v-on:click="handler">click</div>
+    </div>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'this is msg',
+                count: 10000,
+                html: '<div style="color:green;font-size:18px" self="myself"><p><i>this is p</i></p><span>this is span<i>this is i</i></span></div>'
+            },
+            methods: {
+                handler() {
+                    console.log('触发了点击事件')
+                    alert('触发了点击事件')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
