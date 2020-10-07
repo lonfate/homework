@@ -34,6 +34,19 @@
 ##### 6、设置meta优化SEO
 通过head设置当前的页面头部信息
 ##### 7、命令参数
+
+服务器上需要安装nvm，通过nvm安装node，pm2，nuxt
+
 ssh root@59...
 
-scp .\realworld.zip root@59:/root/nuxt-realworld
+scp .\realworld.zip root@59...:/root/nuxt-realworld
+
+下载NVM：
+
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+PM2启动：
+
+pm2 start npm -- start
+
+pm2 start pm2.config.json
